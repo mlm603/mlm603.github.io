@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Avatar from './components/Avatar/AvatarBody/Avatar';
+import AvatarText from './components/Avatar/AvatarText/AvatarText';
+import EightBitBackground from './components/UI/EightBitBackground';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <EightBitBackground>
+        <Avatar mouth_movements="15g" width="10%" height="150px"/>
+        <AvatarText width="60%">
+          Hi, I'm Meghan!
+          <br/><br/> I like visualizing data, reading about data, talking to people about data, criticizing data . . . you get the idea.
+          <select_list>
+            <p>> Learn more about me</p>
+            <p>> View my portfolio</p>
+            <p>> Contact me</p>
+          </select_list>
+        </AvatarText>
+      </EightBitBackground>
     );
-  }
+  };
 }
 
 export default App;
