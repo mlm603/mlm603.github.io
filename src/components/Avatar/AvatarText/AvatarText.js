@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import { SpeechDiv } from './AvatarText_SCs';
 import EightBitSelect from './EightBitSelect/EightBitSelect';
-import EightBitSelectOption from './EightBitSelect/EightBitSelectOption/EightBitSelectOption';
 
 class AvatarText extends Component {
 	animatedText = (fullText) => {
@@ -24,16 +23,12 @@ class AvatarText extends Component {
 					delay += 2; // wait 2 seconds after the previous text loads before loading select options
 					let delay_string = delay + "s";
 					let option_strings = section.props.children;
-					let options = option_strings.map((subsection, k) => { // return an EightBitSelectOption (radio button) for each tag inside the parent select_list
+					let options = option_strings.map((subsection, k) => { // return a hyperlinked string for each tag inside the parent select_list
 						let option_string = subsection.props.children;
-						let id_string = "select_option_" + i + "_" + k
-						return (
-							<EightBitSelectOption id={id_string} is_checked={k === 0 ? "checked" : null}> 
-								{option_string}
-							</EightBitSelectOption>
-						);
+						let link = subsection.props.href;
+						return (<a href={link} target="_"><label>{option_string}</label></a>);
 					});
-					let select_list_div = ( // nest the radio buttons inside an EightBitSelectDiv and apply the animation delay at the div level so all elements load at once
+					let select_list_div = ( // nest the options inside an EightBitSelectDiv and apply the animation delay at the div level so all elements load at once
 						<EightBitSelect animationDelay={delay_string}>
 							{options}
 						</EightBitSelect>
