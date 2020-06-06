@@ -29,9 +29,8 @@ const ProjectTile = (props) => {
 					<iframe src={props.youtube_link} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
 				</youtube_div>
 			)
-			: null
+			: <a href={props.link_to} target="_blank"/>
 		}
-			<a href={props.link_to} target="_blank"/>
 		</ProjectTile_div>
 	);
 };
