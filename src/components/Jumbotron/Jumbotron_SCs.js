@@ -3,9 +3,9 @@ import styled from 'styled-components';
 const Jumbotron_div = styled.div`
     background-color: rgb(175, 200, 200);
     width: 80%;
-    margin-left: 10%;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin: auto auto 20px auto;
+    max-width: 900px;
  `;
 
 const TitleText = styled.h2`

@@ -6,31 +6,35 @@ import { Github_Icon, LinkedIn_Icon, Email_Icon, NPM_Icon } from '../UI/Icon/Ico
 import { SiteTitle, Icons_div, NPMcontact, BodyText, AboutMeImg, ContentContainer, ProjectTile_div } from './HomepageLayout_SCs';
 import profile_img from '../../assets/images/profile.png';
 import js_img from '../../assets/images/js_logo.png';
-import d3_img from '../../assets/images/d3_logo.png';
+import microphone_img from '../../assets/images/microphone_logo.png';
+import dwight_img from '../../assets/images/dwight_icon.png';
+import location_img from '../../assets/images/location_icon.png';
 
 const ProjectTile = (props) => {
 	return (
 		<ProjectTile_div youtube_link={props.youtube_link}>
-		{
-			props.youtube_link ?
-			null
-			: (
-				<img_div>
-					<img src={props.img_path}/>
-				</img_div>
-			)
-		}
-			<h2>{props.title}</h2>
-			<p>{props.description}</p>
-		{
-			props.youtube_link ?
-			(
-				<youtube_div> 
-					<iframe src={props.youtube_link} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
-				</youtube_div>
-			)
-			: <a href={props.link_to} target="_blank"/>
-		}
+			<div>
+			{
+				props.youtube_link ?
+				null
+				: (
+					<img_div>
+						<img src={props.img_path}/>
+					</img_div>
+				)
+			}
+				<h2>{props.title}</h2>
+				<p>{props.description}</p>
+			{
+				props.youtube_link ?
+				(
+					<youtube_div> 
+						<iframe src={props.youtube_link} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
+					</youtube_div>
+				)
+				: <a href={props.link_to} target="_blank"/>
+			}
+			</div>
 		</ProjectTile_div>
 	);
 };
@@ -72,28 +76,28 @@ const jumbotron = (props) => {
 						css_grid_width="12"
 					/>
 					<ProjectTile
-						img_path={js_img}
-						title="FreeCodeCamp JS Projects"
-						description="Javascript projects completed for FreeCodeCamp curriculum circa 2015"
-						link_to="https://codepen.io/collection/XoEdeK"
+						img_path={microphone_img}
+						title="Cellar Scraper"
+						description="Full-stack project to report stats on comedians' performances at the Comedy Cellar. Nightly Python job scrapes the Comedy Cellar site and stores data in a Postgres DB hosted in Heroku. Flask-based site allows users to see some high-level stats and sign up for email alerts."
+						link_to="http://www.cellarscraper.com/"
 					/>
 					<ProjectTile
-						img_path={d3_img}
-						title="FreeCodeCamp D3 Projects"
-						description="D3 projects completed for FreeCodeCamp curriculum circa 2018"
-						link_to="https://codepen.io/collection/AKyweO"
+						img_path={dwight_img}
+						title="Schrute Reports"
+						description="Excel workbook that uses macros to create user friendly report navigation, with stats on bears, beets, and Battlestar Galactica"
+						link_to="https://github.com/mlm603/mlm603.github.io/raw/master/Excel%20files/Bears%20Beets%20Battlestar%20Galactica.xlsm"
 					/>
 					<ProjectTile
-						img_path={js_img}
-						title="Test Title"
-						description="This is a test description"
+						img_path={location_img}
+						title="Neighborhood Comparison"
+						description='Initial proof of concept showing comparable neighborhoods between Chicago and NYC. "Comparable" is based on arbitrary forum discussions.'
 						link_to="https://www.google.com"
 					/>
 					<ProjectTile
 						img_path={js_img}
-						title="Test Title"
-						description="This is a test description"
-						link_to="https://www.google.com"
+						title="FreeCodeCamp JS + D3 Projects"
+						description="Codepen collections of Javascript and D3 projects completed for FreeCodeCamp curriculum."
+						link_to="https://codepen.io/mmaloy/collections/"
 					/>
 				</ContentContainer>
 			</Jumbotron>

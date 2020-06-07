@@ -62,7 +62,7 @@ const ProjectTile_div = styled.div`
 	display: grid;
  	grid-column: ${props => props.youtube_link ? "span 12" : "span 6"};
    	background-color: rgba(51,51,51,0.15);
-   	height: ${props => props.youtube_link ? "auto" : "300px"};
+   	min-height: ${props => props.youtube_link ? "auto" : "300px"};
    	margin: 10px;
    	position: relative;
 
@@ -75,6 +75,7 @@ const ProjectTile_div = styled.div`
    	}
 
     img_div {
+    	display: inline-block;
     	width: 80px;
 	    height: 80px;
 	    position: relative;
@@ -83,7 +84,7 @@ const ProjectTile_div = styled.div`
 	    background-color: white;
 	    justify-self: center;
 	    align-self: center;
-	    margin-top: 15px;
+	    margin: 25px 20px 10px 20px;
     }
 
     img {
@@ -105,8 +106,6 @@ const ProjectTile_div = styled.div`
 
     h2 {
     	margin: 15px 20px 20px 20px;
-    	line-height: 30px;
-  		height: 25px;
     }
 
     p {
