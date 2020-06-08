@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Jumbotron_div = styled.div`
+const JumbotronDiv = styled.div`
     background-color: rgb(175, 200, 200);
     width: 80%;
     border-radius: 10px;
@@ -16,4 +16,4 @@ const TitleText = styled.h2`
     margin: 0;
  `;
 
-export { Jumbotron_div, TitleText };
+export { JumbotronDiv, TitleText };

@@ -1,9 +1,8 @@
 import React from 'react';
-// import { Jumbotron_div } from  './Jumbotron_SCs';
 import Aux from '../../hoc/Aux';
 import Jumbotron from '../Jumbotron/Jumbotron';
-import { Github_Icon, LinkedIn_Icon, Email_Icon, NPM_Icon } from '../UI/Icon/Icon';
-import { SiteTitle, Icons_div, NPMcontact, BodyText, AboutMeImg, ContentContainer, ProjectTile_div } from './HomepageLayout_SCs';
+import { GithubIcon, LinkedInIcon, EmailIcon } from '../UI/Icon/Icon';
+import { SiteTitle, IconsDiv, NPMcontact, BodyText, AboutMeImg, ContentContainer, ProjectTileDiv, ImgDiv } from './HomepageLayout_SCs';
 import profile_img from '../../assets/images/profile.png';
 import js_img from '../../assets/images/js_logo.png';
 import microphone_img from '../../assets/images/microphone_logo.png';
@@ -11,16 +10,19 @@ import dwight_img from '../../assets/images/dwight_icon.png';
 import location_img from '../../assets/images/location_icon.png';
 
 const ProjectTile = (props) => {
+	let link = (props.link_to ? props.link_to : "undefined");
+	var target = (link.charAt(0) === "/" ? "" : "_blank");
+
 	return (
-		<ProjectTile_div youtube_link={props.youtube_link}>
+		<ProjectTileDiv youtube_link={props.youtube_link}>
 			<div>
 			{
 				props.youtube_link ?
 				null
 				: (
-					<img_div>
-						<img src={props.img_path}/>
-					</img_div>
+					<ImgDiv>
+						<img src={props.img_path} alt={props.title}/>
+					</ImgDiv>
 				)
 			}
 				<h2>{props.title}</h2>
@@ -28,18 +30,17 @@ const ProjectTile = (props) => {
 			{
 				props.youtube_link ?
 				(
-					<youtube_div> 
-						<iframe src={props.youtube_link} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
-					</youtube_div>
+					<iframe title={props.title} src={props.youtube_link} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
+
 				)
-				: <a href={props.link_to} target="_blank"/>
+				: <a href={props.link_to} target={target}/>
 			}
 			</div>
-		</ProjectTile_div>
+		</ProjectTileDiv>
 	);
 };
 
-const jumbotron = (props) => {
+const homepage = (props) => {
 	return (
 		<Aux>
 			<Jumbotron>
@@ -49,13 +50,13 @@ const jumbotron = (props) => {
 				<NPMcontact>
 					$ npm install -g meghan_maloy
 				</NPMcontact>
-				<Icons_div>
-					<Email_Icon/>
-					<LinkedIn_Icon/>
-					<Github_Icon/>
-				</Icons_div>
+				<IconsDiv>
+					<EmailIcon/>
+					<LinkedInIcon/>
+					<GithubIcon/>
+				</IconsDiv>
 			</Jumbotron>
-			<Jumbotron section_title="About Me">
+			<Jumbotron section_title="About Me" id="about">
 				<ContentContainer>
 					<BodyText>
 						CAT OWNER. DOUGHNUT ENTHUSIAST. OCCASIONAL PICNICKER.
@@ -67,7 +68,7 @@ const jumbotron = (props) => {
 					<AboutMeImg src={profile_img}/>
 				</ContentContainer>
 			</Jumbotron>
-			<Jumbotron section_title="Portfolio">
+			<Jumbotron section_title="Portfolio" id="portfolio">
 				<ContentContainer>
 					<ProjectTile
 						title="Looker JOIN 2019 Presentation"
@@ -90,8 +91,8 @@ const jumbotron = (props) => {
 					<ProjectTile
 						img_path={location_img}
 						title="Neighborhood Comparison"
-						description='Initial proof of concept showing comparable neighborhoods between Chicago and NYC. "Comparable" is based on arbitrary forum discussions.'
-						link_to="https://www.google.com"
+						description='Proof of concept showing comparable neighborhoods between Chicago and NYC. "Comparable" is based on arbitrary forum discussions.'
+						link_to="/neighborhood_comparison"
 					/>
 					<ProjectTile
 						img_path={js_img}
@@ -105,4 +106,4 @@ const jumbotron = (props) => {
 	);
 };
 
-export default jumbotron;
+export default homepage;

@@ -25,7 +25,7 @@ const NPMcontact = styled.div`
 	margin-top: 1em;
  `;
 
-const Icons_div = styled.div`
+const IconsDiv = styled.div`
 	width: 100%;
 	text-align: center;
  `;
@@ -58,7 +58,7 @@ const ContentContainer = styled.div`
  	grid-template-columns: repeat(12, 1fr);
  `;
 
-const ProjectTile_div = styled.div`
+const ProjectTileDiv = styled.div`
 	display: grid;
  	grid-column: ${props => props.youtube_link ? "span 12" : "span 6"};
    	background-color: rgba(51,51,51,0.15);
@@ -73,19 +73,6 @@ const ProjectTile_div = styled.div`
 		width: 100%;
 		height: 100%;
    	}
-
-    img_div {
-    	display: inline-block;
-    	width: 80px;
-	    height: 80px;
-	    position: relative;
-	    overflow: hidden;
-	    border-radius: 50%;
-	    background-color: white;
-	    justify-self: center;
-	    align-self: center;
-	    margin: 25px 20px 10px 20px;
-    }
 
     img {
 		display: inline;
@@ -129,19 +116,17 @@ const ProjectTile_div = styled.div`
     }
  `;
 
-export { SiteTitle, Icons_div, NPMcontact, BodyText, AboutMeImg, ContentContainer, ProjectTile_div };
+const ImgDiv = styled.div`
+	display: inline-block;
+	width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    margin: 25px 20px 10px 20px;
+`;
 
-// img {
-//     	max-width: 80%;
-//     	max-height: 80%;
-//     	opacity: 15%;
-//     	position: absolute;
-//     	top: 50%;
-//     	left: 50%;
-//     	transform: translate(-50%, -50%);
-//     }
-
-// width: 80px;
-//     	background-color: black;
-//     	border-radius: 50%;
-//     	margin-top: 30px;
+export { SiteTitle, IconsDiv, NPMcontact, BodyText, AboutMeImg, ContentContainer, ProjectTileDiv, ImgDiv };

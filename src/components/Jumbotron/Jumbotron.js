@@ -1,9 +1,9 @@
 import React from 'react';
-import { Jumbotron_div, TitleText } from  './Jumbotron_SCs';
+import { JumbotronDiv, TitleText } from  './Jumbotron_SCs';
 
 const jumbotron = (props) => {
 	return (
-		<Jumbotron_div>
+		<JumbotronDiv id={props.id}>
 			{
 				props.section_title ?
 				(
@@ -14,7 +14,7 @@ const jumbotron = (props) => {
 				: null
 			}
 			{props.children}
-		</Jumbotron_div>
+		</JumbotronDiv>
 	);
 };
 

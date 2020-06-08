@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavItem_div } from './NavItem_SCs';
+import { NavItemDiv } from './NavItem_SCs';
 
 const navItem = (props) => (
-	<NavItem_div itemType={props.itemType}>
+	<NavItemDiv itemType={props.itemType}>
 		<a href={props.link}>
 			{props.children}
 		</a>
-	</NavItem_div>
+	</NavItemDiv>
 );
 
 export default navItem;

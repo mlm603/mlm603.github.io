@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Backdrop_div = styled.div`
+const BackdropDiv = styled.div`
    width: 100%;
    height: 100%;
    position: fixed;
@@ -10,4 +10,4 @@ const Backdrop_div = styled.div`
    background-color: rgba(0, 0, 0, 0.5);
  `;
 
- export { Backdrop_div };
+ export { BackdropDiv };

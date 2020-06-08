@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Toolbar_div = styled.header`
+const ToolbarDiv = styled.header`
     height: ${props => props.isNav ? "100%" : "56px"};
     width: 100%;
     position: fixed;
@@ -16,13 +16,13 @@ const Toolbar_div = styled.header`
     z-index: 90;
  `;
 
-const Nav_div = styled.nav`
+const NavDiv = styled.nav`
     @media (max-width: 500px){
         display: none;
     }
  `;
 
-const Menu_div = styled.nav`
+const MenuDiv = styled.nav`
     width: 40px;
     height: 100%;
     display: flex;
@@ -44,4 +44,4 @@ const Menu_div = styled.nav`
     }
  `;
 
-export { Toolbar_div, Nav_div, Menu_div };
+export { ToolbarDiv, NavDiv, MenuDiv };

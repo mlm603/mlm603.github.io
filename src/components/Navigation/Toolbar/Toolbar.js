@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { Toolbar_div, Nav_div, Menu_div } from './Toolbar_SCs';
+import { ToolbarDiv, NavDiv, MenuDiv } from './Toolbar_SCs';
 import NavItems from '../NavItems/NavItems';
 
 const toolbar = (props) => (
-	<Toolbar_div>
-		<Menu_div onClick={props.menuClick}>
+	<ToolbarDiv>
+		<MenuDiv onClick={props.menuClick}>
 			<div/>
 			<div/>
 			<div/>
-		</Menu_div>
-		<Nav_div>
+		</MenuDiv>
+		<NavDiv>
 			<NavItems/>
-		</Nav_div>
-	</Toolbar_div>
+		</NavDiv>
+	</ToolbarDiv>
 );
 
 export default toolbar;

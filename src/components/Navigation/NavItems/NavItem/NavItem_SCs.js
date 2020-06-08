@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavItem_div = styled.li`
+const NavItemDiv = styled.li`
     margin: 10px 0;
     box-sizing: border-box;
     display: block;
@@ -58,4 +58,4 @@ const NavItem_div = styled.li`
     }
  `;
 
-export { NavItem_div };
+export { NavItemDiv };

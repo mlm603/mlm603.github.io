@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavItems_div = styled.ul`
+const NavItemsDiv = styled.ul`
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,4 +14,4 @@ const NavItems_div = styled.ul`
     }
  `;
 
-export { NavItems_div };
+export { NavItemsDiv };
