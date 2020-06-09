@@ -11,7 +11,7 @@ const JumbotronDiv = styled.div`
 const TitleText = styled.h2`
     color: white;
     font-size: 2em;
-    text-align: left;
+    text-align: ${props => props.position ? props.position : "left"};
     padding: 30px 30px 0px 30px;
     margin: 0;
  `;

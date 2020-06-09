@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const FiltersDiv = styled.div`
+    background-color: #f7f7f7;
+    width: 90%;
     @media (min-width: 800px){
         display: none;
     }
@@ -10,7 +12,7 @@ const FiltersDiv = styled.div`
  `;
 
 const ChartDiv = styled.div`
-    margin-left:1%;
+    margin: 0 1% 20px 1%;
     width:48%;
     display:inline-block;
     background-color: #f7f7f7;
@@ -19,10 +21,12 @@ const ChartDiv = styled.div`
       fill: red;
     }
 
-    display: ${props => props.status === "hidden" ? "none" : null};
-
     @media (max-width: 800px){
-        width: 100%;
+        width: 90%;
+        border: 2px solid black;
+        &.inactive_chart {
+            display: none !important;
+        }
     }
  `;
 
@@ -40,6 +44,7 @@ const NeighborhoodLabel = styled.p`
     height:40px;
     width:100%;
     text-align: center;
+    margin: 20px 0 10px 0;
  `;
 
 const CityTitle = styled.p`
@@ -47,6 +52,7 @@ const CityTitle = styled.p`
     color:white;
     background-color: black;
     padding: 10px 5% 10px 5%;
+    margin: 0;
     text-align: center;
  `;
 
@@ -67,8 +73,26 @@ const InputDiv = styled.input`
     }
  `;
 
+const DescriptionText = styled.p`
+    padding: 0px 30px 30px 30px;
+    &.smallScreen {
+        display: none;
+    }
 
-export { FiltersDiv, ChartDiv, CityFlagDiv, NeighborhoodLabel, CityTitle, InputDiv };
+    &.bigScreen {
+        display: inline-block;
+    }
+
+    @media (max-width: 800px){
+        &.smallScreen {
+            display: inline-block;
+        }
+
+        &.bigScreen {
+            display: none;
+        }
+    }
+ `;
 
 
-        // display: ${props => props.status === "hidden" ? "none !important" : null};
+export { FiltersDiv, ChartDiv, CityFlagDiv, NeighborhoodLabel, CityTitle, InputDiv, DescriptionText };

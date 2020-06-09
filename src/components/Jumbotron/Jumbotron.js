@@ -7,7 +7,7 @@ const jumbotron = (props) => {
 			{
 				props.section_title ?
 				(
-					<TitleText>
+					<TitleText position={props.title_position}>
 						{props.section_title}
 					</TitleText>
 				)

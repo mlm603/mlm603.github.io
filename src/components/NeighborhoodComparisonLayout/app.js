@@ -3,9 +3,9 @@ import chi_map_json from './json/chicago.json';
 import nyc_map_json from './json/nyc.json';
 
 var chi_chart_width = 700;
-var chi_chart_height = 800;
+var chi_chart_height = 700;
 var nyc_chart_width = 700;
-var nyc_chart_height = 800;
+var nyc_chart_height = 700;
 
 var select = document.getElementById("neighborhood");
 
@@ -67,13 +67,12 @@ d3.selectAll('input').on("change", function() {
   //update dropdown to show neighborhoods in the selected city
   updateDD(selected_city_array);
   //switch inactive_chart class so opposit city's map will be visible in mobile view
-  if (this.value==="chi"){
-    console.log('made it')
-    d3.selectAll("#chicago_chart").style("display", "none");
-    d3.selectAll("#nyc_chart").style("display", "inline-block");
+  if (this.value=="chi"){
+    d3.selectAll("#chicago_chart").classed("inactive_chart",true);
+    d3.selectAll("#nyc_chart").classed("inactive_chart",false);
   } else {
-    d3.selectAll("#chicago_chart").style("display", "inline-block");
-    d3.selectAll("#nyc_chart").style("display", "none");
+    d3.selectAll("#chicago_chart").classed("inactive_chart",false);
+    d3.selectAll("#nyc_chart").classed("inactive_chart",true);
   }
 });
 
@@ -114,11 +113,12 @@ var nycPath=d3.geoPath()
 //Create SVG
 var chiMap = d3.select('#chicago')
             .append('svg')
-            .attr('viewBox', '0 0 ' + chi_chart_width + ' ' + chi_chart_height);
+            .attr('viewBox', '0 0 ' + chi_chart_width + ' ' + chi_chart_height)
+            .attr('preserveAspectRatio', 'xMidYMid meet');
 
 var nycMap = d3.select('#nyc')
             .append('svg')
-            .attr('viewBox', '0 0 ' + nyc_chart_width + ' ' + nyc_chart_height);
+            .attr('viewBox', '0 50 ' + nyc_chart_width + ' ' + nyc_chart_height);
 
 //Data
 
